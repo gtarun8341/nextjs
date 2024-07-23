@@ -113,7 +113,6 @@ export default function ClosedPositions() {
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 }

@@ -108,7 +108,6 @@ export default function PendingPool() {
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 }

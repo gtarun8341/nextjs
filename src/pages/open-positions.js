@@ -132,7 +132,6 @@ export default function OpenPositions() {
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 }

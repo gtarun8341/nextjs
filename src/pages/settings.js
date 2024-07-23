@@ -7,6 +7,8 @@ import AutoBuy from '@/components/settings/AutoBuy';
 import SLTP from '@/components/settings/SLTP';
 import Fees from '@/components/settings/Fees';
 import GeneralSettings from '@/components/settings/GeneralSettings';
+import CircleTooltip from '@/components/CircleTooltip';
+import { ClipboardIcon } from '@heroicons/react/24/outline'; // Correct import
 
 export default function Settings() {
   const [activeTab, setActiveTab] = useState('Pending Pool');
@@ -29,6 +31,19 @@ export default function Settings() {
     }
   };
 
+  const tabHeadings = [
+    { label: 'Pending Pool', tooltip: 'Manage pending pool settings' },
+    { label: 'Auto Buy', tooltip: 'Configure auto buy settings' },
+    { label: 'SL/TP', tooltip: 'Set stop loss and take profit' },
+    { label: 'Fees', tooltip: 'Adjust fee settings' },
+    { label: 'General Settings', tooltip: 'Configure general settings' },
+  ];
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(walletAddress);
+    alert('Wallet address copied to clipboard!');
+  };
+
   return (
     <div>
       <Head>
@@ -42,29 +57,40 @@ export default function Settings() {
       <main className="p-4">
         <div className="flex flex-col">
           {/* Title and Wallet Address */}
-          <div className="bg-gray-100 p-4 mb-6">
+          <div className="p-4 mb-6">
             <h2 className="text-2xl font-semibold">Settings</h2>
             <div className="mt-4 flex items-center">
               <span className="text-lg font-semibold">Trading Wallet:</span>
-              <span className="ml-4 text-gray-600">{walletAddress}</span>
+              <div className="ml-4 flex items-center border border-gray-300 rounded-lg bg-white shadow-sm px-3 py-1">
+                <span className="text-gray-600">{walletAddress}</span>
+                <button
+                  onClick={handleCopy}
+                  className="ml-2 p-1 text-gray-500 hover:text-gray-700"
+                  aria-label="Copy to clipboard"
+                >
+                  <ClipboardIcon className="h-5 w-5" />
+                </button>
+              </div>
             </div>
           </div>
 
           {/* Tabs */}
           <div className="mb-6">
             <div className="flex space-x-4">
-              {['Pending Pool', 'Auto Buy', 'SL/TP', 'Fees', 'General Settings'].map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`py-2 px-4 text-sm font-semibold rounded-lg ${
-                    activeTab === tab
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-gray-200 text-gray-700'
-                  }`}
-                >
-                  {tab}
-                </button>
+              {tabHeadings.map(({ label, tooltip }) => (
+                <div key={label} className="flex items-center">
+                  <button
+                    onClick={() => setActiveTab(label)}
+                    className={`py-2 px-4 text-sm font-semibold ${
+                      activeTab === label
+                        ? 'text-blue-600 underline'
+                        : 'text-gray-700'
+                    }`}
+                  >
+                    {label}
+                  </button>
+                  <CircleTooltip text="i" tooltip={tooltip} />
+                </div>
               ))}
             </div>
           </div>
@@ -75,12 +101,10 @@ export default function Settings() {
             <div className="flex-1 mr-4">
               {renderTabContent()}
             </div>
-
           </div>
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 }

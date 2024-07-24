@@ -14,9 +14,8 @@ const data = [
     pooledsol: '100', // Changed from 'pooledSol' to 'pooledsol'
     pooledtoken: '2000', // Changed from 'pooledToken' to 'pooledtoken'
     change24h: '5%', // Changed from 'change24h' to 'change24h'
-    lpburned: '50', // Changed from 'lpBurned' to 'lpburned'
-    status: 'Active',
-    actions: 'Edit | Delete'
+    lpburned: 'burned', // Changed from 'lpBurned' to 'lpburned'
+    status: 'buying',
   },
   {
     pair: 'ETH/USD',
@@ -25,9 +24,108 @@ const data = [
     pooledsol: '150', // Changed from 'pooledSol' to 'pooledsol'
     pooledtoken: '3000', // Changed from 'pooledToken' to 'pooledtoken'
     change24h: '-3%', // Changed from 'change24h' to 'change24h'
-    lpburned: '75', // Changed from 'lpBurned' to 'lpburned'
-    status: 'Inactive',
-    actions: 'Edit | Delete'
+    lpburned: 'not burned', // Changed from 'lpBurned' to 'lpburned'
+    status: 'waiting...',
+  },
+  {
+    pair: 'BTC/ETH',
+    created: '2024-07-23',
+    contactaudit: 'Passed',
+    pooledsol: '100',
+    pooledtoken: '2000',
+    change24h: '5%',
+    lpburned: 'burned',
+    status: 'buying',
+  },
+  {
+    pair: 'ETH/USD',
+    created: '2024-07-24',
+    contactaudit: 'Pending',
+    pooledsol: '150',
+    pooledtoken: '2500',
+    change24h: '-2%',
+    lpburned: 'not burned',
+    status: 'waiting...',
+  },
+  {
+    pair: 'LTC/BTC',
+    created: '2024-07-25',
+    contactaudit: 'Failed',
+    pooledsol: '80',
+    pooledtoken: '1800',
+    change24h: '8%',
+    lpburned: 'burned',
+    status: 'sold',
+  },
+  {
+    pair: 'XRP/ETH',
+    created: '2024-07-26',
+    contactaudit: 'Passed',
+    pooledsol: '120',
+    pooledtoken: '2200',
+    change24h: '-4%',
+    lpburned: 'not burned',
+    status: 'buying',
+  },
+  {
+    pair: 'ADA/BTC',
+    created: '2024-07-27',
+    contactaudit: 'Pending',
+    pooledsol: '90',
+    pooledtoken: '2100',
+    change24h: '10%',
+    lpburned: 'burned',
+    status: 'waiting...',
+  },
+  {
+    pair: 'BTC/ETH',
+    created: '2024-07-23',
+    contactaudit: 'Passed',
+    pooledsol: '100',
+    pooledtoken: '2000',
+    change24h: '5%',
+    lpburned: 'burned',
+    status: 'buying',
+  },
+  {
+    pair: 'ETH/USD',
+    created: '2024-07-24',
+    contactaudit: 'Pending',
+    pooledsol: '150',
+    pooledtoken: '2500',
+    change24h: '-2%',
+    lpburned: 'not burned',
+    status: 'waiting...',
+  },
+  {
+    pair: 'LTC/BTC',
+    created: '2024-07-25',
+    contactaudit: 'Failed',
+    pooledsol: '80',
+    pooledtoken: '1800',
+    change24h: '8%',
+    lpburned: 'burned',
+    status: 'sold',
+  },
+  {
+    pair: 'XRP/ETH',
+    created: '2024-07-26',
+    contactaudit: 'Passed',
+    pooledsol: '120',
+    pooledtoken: '2200',
+    change24h: '-4%',
+    lpburned: 'not burned',
+    status: 'buying',
+  },
+  {
+    pair: 'ADA/BTC',
+    created: '2024-07-27',
+    contactaudit: 'Pending',
+    pooledsol: '90',
+    pooledtoken: '2100',
+    change24h: '10%',
+    lpburned: 'burned',
+    status: 'waiting...',
   },
   // Add more rows as needed
 ];
@@ -58,10 +156,9 @@ export default function PendingPool() {
     'Contact Audit',
     'Pooled Sol',
     'Pooled Token',
-    '24h Change',
+    'change24h',
     'LP Burned',
     'Status',
-    'Actions'
   ];
 
   return (

@@ -14,8 +14,7 @@ const data = [
     sold: '600',
     roi: '20%',
     pnl: '100',
-    action: 'Reopen | Delete',
-    hide: 'Hide'
+
   },
   {
     pair: 'ETH/USD',
@@ -24,8 +23,87 @@ const data = [
     sold: '350',
     roi: '15%',
     pnl: '-50',
-    action: 'Reopen | Delete',
-    hide: 'Hide'
+
+  },
+  {
+    pair: 'ETH/USD',
+    created: '2024-07-19',
+    invested: '300',
+    sold: '350',
+    roi: '15%',
+    pnl: '-50%',
+  },
+  {
+    pair: 'BTC/ETH',
+    created: '2024-07-20',
+    invested: '450',
+    sold: '500',
+    roi: '10%',
+    pnl: '30%',
+  },
+  {
+    pair: 'LTC/BTC',
+    created: '2024-07-21',
+    invested: '250',
+    sold: '300',
+    roi: '20%',
+    pnl: '25%',
+  },
+  {
+    pair: 'XRP/ETH',
+    created: '2024-07-22',
+    invested: '400',
+    sold: '350',
+    roi: '-10%',
+    pnl: '-20%',
+  },
+  {
+    pair: 'ADA/BTC',
+    created: '2024-07-23',
+    invested: '150',
+    sold: '200',
+    roi: '30%',
+    pnl: '40%',
+  },
+  {
+    pair: 'ETH/USD',
+    created: '2024-07-19',
+    invested: '300',
+    sold: '350',
+    roi: '15%',
+    pnl: '-50%',
+  },
+  {
+    pair: 'BTC/ETH',
+    created: '2024-07-20',
+    invested: '450',
+    sold: '500',
+    roi: '10%',
+    pnl: '30%',
+  },
+  {
+    pair: 'LTC/BTC',
+    created: '2024-07-21',
+    invested: '250',
+    sold: '300',
+    roi: '20%',
+    pnl: '25%',
+  },
+  {
+    pair: 'XRP/ETH',
+    created: '2024-07-22',
+    invested: '400',
+    sold: '350',
+    roi: '-10%',
+    pnl: '-20%',
+  },
+  {
+    pair: 'ADA/BTC',
+    created: '2024-07-23',
+    invested: '150',
+    sold: '200',
+    roi: '30%',
+    pnl: '40%',
   },
   // Add more rows as needed
 ];
@@ -49,8 +127,7 @@ export default function ClosedPositions() {
     'Sold',
     'ROI',
     'PNL',
-    'Action',
-    'Hide'
+
   ];
 
   return (
@@ -85,7 +162,7 @@ export default function ClosedPositions() {
           />
           <div className="text-lg font-semibold mr-4">
             <span>Closed Position PNL: </span>
-            <span>${totalPnl.toFixed(2)}</span>
+            <span>{totalPnl.toFixed(2)}</span>
           </div>
           <div className="flex-grow" /> {/* This takes up remaining space */}
           <SettingsButton 

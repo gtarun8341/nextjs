@@ -10,7 +10,6 @@ import Table from '@/components/Table'; // Import the Table component
 
 const initialData = [
   {
-    id: 1,
     pair: 'BTC/ETH',
     created: '2024-07-23',
     invested: '100',
@@ -18,10 +17,8 @@ const initialData = [
     roi: '5%',
     pnl: '50',
     status: 'Open',
-    actions: 'Edit | Close',
   },
   {
-    id: 2,
     pair: 'ETH/USD',
     created: '2024-07-22',
     invested: '150',
@@ -29,7 +26,96 @@ const initialData = [
     roi: '-3%',
     pnl: '-75',
     status: 'Open',
-    actions: 'Edit | Close',
+  },
+  {
+    pair: 'BTC/ETH',
+    created: '2024-07-21',
+    invested: '200',
+    current: '1800',
+    roi: '-10%',
+    pnl: '-20',
+    status: 'Closed',
+  },
+  {
+    pair: 'ETH/USD',
+    created: '2024-07-22',
+    invested: '150',
+    current: '3000',
+    roi: '-3%',
+    pnl: '-75',
+    status: 'Open',
+  },
+  {
+    pair: 'LTC/BTC',
+    created: '2024-07-23',
+    invested: '400',
+    current: '6000',
+    roi: '50%',
+    pnl: '2000',
+    status: 'Closed',
+  },
+  {
+    pair: 'XRP/ETH',
+    created: '2024-07-24',
+    invested: '250',
+    current: '500',
+    roi: '-20%',
+    pnl: '-50',
+    status: 'Open',
+  },
+  {
+    pair: 'ADA/BTC',
+    created: '2024-07-25',
+    invested: '300',
+    current: '4200',
+    roi: '40%',
+    pnl: '1200',
+    status: 'Closed',
+  },
+  {
+    pair: 'BTC/ETH',
+    created: '2024-07-21',
+    invested: '200',
+    current: '1800',
+    roi: '-10%',
+    pnl: '-20',
+    status: 'Closed',
+  },
+  {
+    pair: 'ETH/USD',
+    created: '2024-07-22',
+    invested: '150',
+    current: '3000',
+    roi: '-3%',
+    pnl: '-75',
+    status: 'Open',
+  },
+  {
+    pair: 'LTC/BTC',
+    created: '2024-07-23',
+    invested: '400',
+    current: '6000',
+    roi: '50%',
+    pnl: '2000',
+    status: 'Closed',
+  },
+  {
+    pair: 'XRP/ETH',
+    created: '2024-07-24',
+    invested: '250',
+    current: '500',
+    roi: '-20%',
+    pnl: '-50',
+    status: 'Open',
+  },
+  {
+    pair: 'ADA/BTC',
+    created: '2024-07-25',
+    invested: '300',
+    current: '4200',
+    roi: '40%',
+    pnl: '1200',
+    status: 'Closed',
   },
   // Add more rows as needed
 ];
@@ -60,7 +146,6 @@ export default function OpenPositions() {
     'ROI',
     'PNL',
     'Status',
-    'Actions'
   ];
 
   return (
@@ -94,24 +179,29 @@ export default function OpenPositions() {
             className="border bg-[#0F0F0F] border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <label className="flex items-center cursor-pointer ml-4">
-            <input 
-              type="checkbox"
-              checked={showAdditionalSection}
-              onChange={() => setShowAdditionalSection(!showAdditionalSection)}
-              className="sr-only"
-            />
-            <div className="relative">
-              <div className="w-12 h-6 bg-gray-200 rounded-full shadow-inner"></div>
-              <div 
-                className={`absolute left-0 top-0 w-6 h-6 bg-blue-500 rounded-full shadow-md transform transition-transform ${showAdditionalSection ? 'translate-x-full' : ''}`}
-              ></div>
-            </div>
-            <span className="ml-2 text-sm text-white">Show hidden</span>
-          </label>
-          <div className="text-lg font-semibold mr-4 flex-grow">
+  <input 
+    type="checkbox"
+    checked={showAdditionalSection}
+    onChange={() => setShowAdditionalSection(!showAdditionalSection)}
+    className="sr-only"
+  />
+  <div className="relative">
+    <div 
+      className={`w-7 h-2 rounded-full shadow-inner transition-colors ${showAdditionalSection ? 'bg-green-500' : 'bg-gray-200'}`}
+    ></div>
+    <div 
+      className={`absolute left-0 top-0 w-4 h-4 bg-white rounded-full shadow-md transform transition-transform ${showAdditionalSection ? 'translate-x-full' : ''}`}
+      style={{ top: '-0.2rem' }} /* Adjusted positioning */
+    ></div>
+  </div>
+  <span className="ml-2 text-sm text-white">Show hidden</span>
+</label>
+
+
+          <div className="text-sm font-semibold mr-4 flex-grow">
             <span>Open Positions: {data.length}</span>
-            <span className="ml-4">Total Invested: ${calculateTotalInvested()}</span>
-            <span className="ml-4">Total Current: ${calculateTotalCurrent()}</span>
+            <span className="ml-4">Total Invested SOL: {calculateTotalInvested()}</span>
+            <span className="ml-4">Total Current SOL: {calculateTotalCurrent()}</span>
           </div>
           <div className="flex-grow" /> {/* This takes up remaining space */}
           <SettingsButton 

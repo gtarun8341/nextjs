@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Table = ({ headers, data, actions = [] }) => { // Default value for actions
+const Table = ({ headers, data, actions = [] }) => {
   // Helper function to check if a value is negative
   const isNegative = (value) => {
     if (typeof value === 'string') {
@@ -11,8 +11,8 @@ const Table = ({ headers, data, actions = [] }) => { // Default value for action
 
   // Helper function to get the color for specific headers
   const getCellColor = (header, item) => {
-    if (header === 'ROI' || header === 'PNL' || header === 'Status') {
-      return isNegative(item.pnl) ? 'text-red-500' : 'text-green-500';
+    if (header === 'ROI' || header === 'PNL' || header === 'Status' || header === 'change24h') {
+      return isNegative(item.pnl || item.change24h) ? 'text-red-500' : 'text-green-500';
     }
     return ''; // Default color if not ROI, PNL, or Status
   };
@@ -22,6 +22,19 @@ const Table = ({ headers, data, actions = [] }) => { // Default value for action
     const key = header.toLowerCase().replace(/\s+/g, '');
     const value = item[key];
     const cellColor = getCellColor(header, item);
+
+    if (header === 'LP Burned') {
+      return (
+        <div className="flex items-center">
+          {value}
+          {value === 'burned' ? (
+            <img src="/tick.jpg" alt="Tick" className="w-2 h-2 ml-2" />
+          ) : (
+            <img src="/cross.jpg" alt="Cross" className="w-2 h-2 ml-2" />
+          )}
+        </div>
+      );
+    }
 
     return (
       <div className={`flex items-center ${cellColor}`}>
@@ -41,17 +54,17 @@ const Table = ({ headers, data, actions = [] }) => { // Default value for action
   const renderActions = (item) => {
     const actionComponents = {
       quickBuy: (
-        <button key="quickBuy" className="bg-gray-500 text-white px-5 py-2 rounded-2xl hover:bg-gray-600">
+        <button key="quickBuy" className="bg-gray-500 text-white px-4 py-1 rounded-2xl hover:bg-gray-600">
           Quick Buy
         </button>
       ),
       quickSell: (
-        <button key="quickSell" className="bg-gray-500 text-white px-5 py-2 rounded-2xl hover:bg-gray-600">
+        <button key="quickSell" className="bg-gray-500 text-white px-4 py-1 rounded-2xl hover:bg-gray-600">
           Quick Sell
         </button>
       ),
       cancel: (
-        <button key="cancel" className="bg-gray-500 text-white px-5 py-2 rounded-2xl hover:bg-gray-600">
+        <button key="cancel" className="bg-gray-500 text-white px-4 py-1 rounded-2xl hover:bg-gray-600">
           Cancel
         </button>
       ),
@@ -80,14 +93,18 @@ const Table = ({ headers, data, actions = [] }) => { // Default value for action
         />
       ),
     };
-  
+
     return (
-      <div className="flex items-center space-x-2">
-        {actions.map((action) => actionComponents[action])}
+      <div className="flex items-center justify-between">
+        <div className="flex items-center space-x-2">
+          {actions.filter(action => action !== 'eye').map(action => actionComponents[action])}
+        </div>
+        <div className="ml-auto">
+          {actions.includes('eye') && actionComponents.eye}
+        </div>
       </div>
     );
   };
-  
 
   return (
     <div className="relative overflow-x-auto">
@@ -99,32 +116,34 @@ const Table = ({ headers, data, actions = [] }) => { // Default value for action
           zIndex: -1,
         }}
       />
-      <table className="min-w-full divide-y divide-gray-100 relative">
-        <thead className="bg-[#0F0F0F] text-white">
-          <tr>
-            {headers.map((header, index) => (
-              <th key={index} className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
-                {header}
-              </th>
-            ))}
-            <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((item, rowIndex) => (
-            <tr key={rowIndex} className={rowIndex % 2 === 0 ? 'bg-[#141414]' : 'bg-[#0F0F0F]'}>
-              {headers.map((header, colIndex) => (
-                <td key={colIndex} className="px-6 py-4 whitespace-nowrap text-white">
-                  {renderCellContent(header, item)}
-                </td>
+      <div className="overflow-y-auto scrollbar-thin scrollbar-thumb-[#0F0F0F] scrollbar-track-[#141414]" style={{ maxHeight: '450px' }}> {/* Adjust maxHeight as needed */}
+        <table className="min-w-full divide-y divide-gray-100">
+          <thead className="bg-[#0F0F0F] text-white">
+            <tr>
+              {headers.map((header, index) => (
+                <th key={index} className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
+                  {header}
+                </th>
               ))}
-              <td className="px-6 py-4 whitespace-nowrap text-white">
-                {renderActions(item)}
-              </td>
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"></th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {data.map((item, rowIndex) => (
+              <tr key={rowIndex} className={rowIndex % 2 === 0 ? 'bg-[#141414]' : 'bg-[#0F0F0F]'}>
+                {headers.map((header, colIndex) => (
+                  <td key={colIndex} className="px-6 py-4 whitespace-nowrap text-white">
+                    {renderCellContent(header, item)}
+                  </td>
+                ))}
+                <td className="px-6 py-4 whitespace-nowrap text-white">
+                  {renderActions(item)}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

@@ -27,7 +27,7 @@ const initialData = [
     invested: '150',
     current: '3000',
     roi: '-3%',
-    pnl: '75',
+    pnl: '-75',
     status: 'Open',
     actions: 'Edit | Close',
   },
@@ -120,7 +120,7 @@ export default function OpenPositions() {
           />
         </div>
         {/* Table */}
-        <Table headers={headers} data={data} />
+        <Table headers={headers} data={data} actions={['rotate', 'eagle', 'quickSell', 'eye']} />
       </main>
 
     </div>

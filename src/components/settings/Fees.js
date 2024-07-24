@@ -64,12 +64,24 @@ export default function Fees() {
 
       {/* Lorem Ipsum Section */}
       <div className="w-full md:w-1/3 flex flex-col">
-        {/* Lorem Ipsum Section */}
-        <div className="flex-1 mb-4 bg-gray-100 p-4 rounded-lg h-80 overflow-y-auto"> {/* Increased height here */}
-          <h4 className="text-lg font-semibold mb-1">Lorem Ipsum</h4>
-          <p className="text-gray-600 mb-3">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper eleifend. Duis ultricies pharetra magna nec dictum.
-          </p>
+        {/* Wrapper for Shadow */}
+        <div className="relative flex-1 mb-4">
+          {/* Shadow Effect */}
+          <div
+            className="absolute inset-y-0 left-0 w-12 bg-[#0F0F0F] z-0"
+            style={{
+              boxShadow: '2px 0 20px rgba(156, 21, 220, 0.5)', // Darker shadow effect
+              filter: 'blur(166.9px)',
+              transform: 'translateX(-12px)', // Adjust the shadow positioning
+            }}
+          ></div>
+          {/* Lorem Ipsum Content */}
+          <div className="relative bg-[#0F0F0F] p-4 rounded-lg h-80 overflow-y-auto z-10">
+            <h4 className="text-lg font-semibold mb-1 text-white">Lorem Ipsum</h4>
+            <p className="text-gray-300 mb-3">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper eleifend. Duis ultricies pharetra magna nec dictum.
+            </p>
+          </div>
         </div>
         
         {/* Buttons */}

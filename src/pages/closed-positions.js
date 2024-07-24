@@ -14,7 +14,7 @@ const data = [
     sold: '600',
     roi: '20%',
     pnl: '100',
-    actions: 'Reopen | Delete',
+    action: 'Reopen | Delete',
     hide: 'Hide'
   },
   {
@@ -23,8 +23,8 @@ const data = [
     invested: '300',
     sold: '350',
     roi: '15%',
-    pnl: '50',
-    actions: 'Reopen | Delete',
+    pnl: '-50',
+    action: 'Reopen | Delete',
     hide: 'Hide'
   },
   // Add more rows as needed
@@ -95,7 +95,7 @@ export default function ClosedPositions() {
         </div>
 
         {/* Table */}
-        <Table headers={headers} data={data} />
+        <Table headers={headers} data={data} actions={['rotate', 'eagle', 'eye']} />
       </main>
 
     </div>

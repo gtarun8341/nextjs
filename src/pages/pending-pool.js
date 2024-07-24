@@ -1,5 +1,3 @@
-// pages/pending-pool.js
-
 import { useState } from 'react';
 import Head from 'next/head';
 import Header from '@/components/Header';
@@ -12,22 +10,22 @@ const data = [
   {
     pair: 'BTC/ETH',
     created: '2024-07-23',
-    contactAudit: 'Passed',
-    pooledSol: '100',
-    pooledToken: '2000',
-    change24h: '5%',
-    lpBurned: '50',
+    contactaudit: 'Passed', // Changed from 'contactAudit' to 'contactaudit'
+    pooledsol: '100', // Changed from 'pooledSol' to 'pooledsol'
+    pooledtoken: '2000', // Changed from 'pooledToken' to 'pooledtoken'
+    change24h: '5%', // Changed from 'change24h' to 'change24h'
+    lpburned: '50', // Changed from 'lpBurned' to 'lpburned'
     status: 'Active',
     actions: 'Edit | Delete'
   },
   {
     pair: 'ETH/USD',
     created: '2024-07-22',
-    contactAudit: 'Pending',
-    pooledSol: '150',
-    pooledToken: '3000',
-    change24h: '-3%',
-    lpBurned: '75',
+    contactaudit: 'Pending', // Changed from 'contactAudit' to 'contactaudit'
+    pooledsol: '150', // Changed from 'pooledSol' to 'pooledsol'
+    pooledtoken: '3000', // Changed from 'pooledToken' to 'pooledtoken'
+    change24h: '-3%', // Changed from 'change24h' to 'change24h'
+    lpburned: '75', // Changed from 'lpBurned' to 'lpburned'
     status: 'Inactive',
     actions: 'Edit | Delete'
   },
@@ -84,20 +82,28 @@ export default function PendingPool() {
           <p>Presenting your current pending pool, updated in real-time</p>
         </div>
         {/* Filter and Settings */}
-        <div className="flex justify-between items-center mb-4">
-          <Filter
-            filterOptions={filterOptions}
+        <div className="flex items-center mb-4 space-x-4">
+          <Filter 
+            filterOptions={[
+              { value: 'All', label: 'All' },
+              { value: 'Active', label: 'Active' },
+              { value: 'Inactive', label: 'Inactive' },
+              { value: 'Pending', label: 'Pending' },
+            ]}
             selectedOption={filterOption}
             onFilterChange={handleFilterChange}
+            className="border bg-[#0F0F0F] border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <div>
-            <SettingsButton />
-          </div>
+          <div className="flex-grow" /> {/* This takes up remaining space */}
+          <SettingsButton 
+            onClick={() => console.log('Settings Clicked')} 
+            className="border border-[#0F0F0F] text-white px-4 py-2 rounded-lg hover:bg-gray-700"
+          />
         </div>
 
         {/* Table */}
-        <Table headers={headers} data={filteredData} />
-      </main>
+        <Table headers={headers} data={filteredData} actions={['eagle', 'quickBuy', 'cancel']} />
+        </main>
 
     </div>
   );

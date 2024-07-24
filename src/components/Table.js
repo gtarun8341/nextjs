@@ -1,5 +1,5 @@
 import React from 'react';
-
+import EagleIcon from './EagleIcon';
 const Table = ({ headers, data, actions = [] }) => {
   // Helper function to check if a value is negative
   const isNegative = (value) => {
@@ -40,7 +40,7 @@ const Table = ({ headers, data, actions = [] }) => {
       <div className={`flex items-center ${cellColor}`}>
         {header === 'Invested' || header === 'Current' || header === 'PNL' || header === 'Sold' || header === 'Pooled Sol' ? (
           <>
-            <img src="/sol.jpg" alt="Sol" className="w-6 h-6 mr-2" />
+            <img src="/sol.png" alt="Sol" className="w-6 h-6 mr-2" />
             {value}
           </>
         ) : (
@@ -77,19 +77,14 @@ const Table = ({ headers, data, actions = [] }) => {
         />
       ),
       eagle: (
-        <img
-          key="eagle"
-          src="./eagle.jpg" // Replace with actual path to your eagle icon image
-          alt="Eagle Icon"
-          className="w-5 h-5"
-        />
+        <EagleIcon key="eagle" src="/eagle-icon.png" alt="Eagle Icon" width={20} height={24} className="w-5 h-5" />
       ),
       eye: (
         <img
           key="eye"
-          src="./eye.jpg" // Replace with actual path to your eye icon image
+          src="./hide.png" // Replace with actual path to your eye icon image
           alt="Eye Icon"
-          className="w-5 h-5"
+          className="w-5 h-5 filter invert"
         />
       ),
     };
@@ -116,8 +111,13 @@ const Table = ({ headers, data, actions = [] }) => {
           zIndex: -1,
         }}
       />
-      <div className="overflow-y-auto scrollbar-thin scrollbar-thumb-[#0F0F0F] scrollbar-track-[#141414]" style={{ maxHeight: '450px' }}> {/* Adjust maxHeight as needed */}
-        <table className="min-w-full divide-y divide-gray-100">
+<div
+        className="overflow-y-auto scrollbar-thin scrollbar-thumb-[#0F0F0F] scrollbar-track-[#141414]"
+        style={{ 
+          maxHeight: '450px', 
+          scrollbarWidth: '12px' /* For Firefox */,
+        }}
+      >        <table className="min-w-full divide-y divide-gray-100">
           <thead className="bg-[#0F0F0F] text-white">
             <tr>
               {headers.map((header, index) => (

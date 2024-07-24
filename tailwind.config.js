@@ -7,8 +7,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'scrollbar-track': '#0F0F0F',
-        'scrollbar-thumb': '#141414',
+        'scrollbar-track': '#141414',
+        'scrollbar-thumb': '#0F0F0F',
       },
     },
   },

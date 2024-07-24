@@ -2,19 +2,37 @@ import React from 'react';
 
 const EagleIcon = () => {
   return (
-    <svg
-      width="20"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M12 2C8.69 2 6 4.69 6 8C6 11.31 8.69 14 12 14C15.31 14 18 11.31 18 8C18 4.69 15.31 2 12 2ZM12 12.5C10.57 12.5 9.36 11.28 9.36 10C9.36 8.72 10.57 7.5 12 7.5C13.43 7.5 14.64 8.72 14.64 10C14.64 11.28 13.43 12.5 12 12.5ZM20 14H18V16H16V14H8V16H6V14H4V18H20V14Z"
-        fill="black"
-      />
-    </svg>
+    <div>
+      {/* Other content */}
+      <svg
+        width="20"
+        height="24"
+        viewBox="0 0 20 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+        className="w-5 h-5"
+      >
+        <rect width="19.7647" height="24" fill="url(#pattern0_2600_68)" />
+        <defs>
+          <pattern
+            id="pattern0_2600_68"
+            patternContentUnits="objectBoundingBox"
+            width="1"
+            height="1"
+          >
+            <use xlinkHref="#image0_2600_68" transform="scale(0.0238095 0.0196078)" />
+          </pattern>
+          <image
+            id="image0_2600_68"
+            width="42"
+            height="51"
+            xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAzCAYAAADhGpoIAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAOfSURBVHgB1VmLcdswDKVzHUAbhCNoBHUDb1B3gnoDOxM4GyidIO0E6gbKBswGzgavREQmEAVS1MdO8u54sUgCeAJJgEKU+iLYqBUAoLB/tG2lbYXrfrHt2banzWbzoj4Kllxp28G2FuOgOSfbtLoWHMEG81GvQpiWkchExk5YDwcVd0ShMsnubduxZ41lXoyBtoRmdra23atcoPPqGd0y7WwzuByMs9G431pNATqvXhs7NQdW8B7XQ/6SR8jmhJ+laMd43CQI+pP33bYndTk8ORvcZh7QnXLjBdEdrkt4tmU2NH/OJVo7RQ3rI7KPWA8PnBTew98xlycJGabwFIwdsRzHQCdPJOdcklWg1Ahz5sZWis1VoMvHbI4qh2josX1kHu2pB+SDtk2RaXM8VGGYKqtgTCvZu9QoSZSu+f4GQy/SeMuew1X8M8ZTipu3zIMeB0Eu67Siuxp6FIw4h8lRZAKhLRtruDIIKQ/dniuE/irQbYKxxURrNub35ZmRrRjBmsmdAo/5lSLZe/RDU70GUSDjFArGei+ZkNsKcrOJkhf2CZkKcVQJuV8YhqZFRN8UoAsl5AXNZOqETLh1SPaA9EV8MVGOPZNpc4yiC1k5GBC9UfPBP4G1ujDmEv3nmkcqhmr2mwL5b7UGRpaElrgK5ku5moPGikCG9qlJGZpLVDz1GAbxGGjOTpCPXm7GSBYRQ5KREph0g6KXLSNkJcS3E4Y5l6PG8EKike9RLdhqEjK3KaJVhtEa/Rg6RtYE82nVciou2xTR3G95A7aMSK+EDuadkYfemQjDk1Z5oHmNJ2HLivQleSfMu7Njz44kzX1U6VAW2pCB6fWl8OOPe+uM/DQroU0RnYOKyfPKCs/xuakzRCGRzDlIEpqIjnLBSnlUEtEa88G9apC+vU/B20ceP0yc/dSaOw8llMv/sucfahpeorLBWzeYXrh9y+dOV+l+F5iG18Iu+tfGihOtEbga6dgoYRe6BtMPkWay/mDWvsN/BkuXjmNEocHwstwI8mGtqkU8ix0FeUpA3Wo5MrF/LhSCYuNeTgf9vesc5GX3ckbQGauivBYzfMaIAv392wZkQo/zGsA25jEM9+FuhEP2f0kaCLVLDD3Og3zNPSYZdzpHP6mz4TwQWxru8TPrN2MeQ6SqcjGgH8pew5Pk5SX4ptbBT9voEkHeqVg/Be879ZmA97tsgzll7msC/ZM8Xu34KAQHS6vPDHSpb72Q4/AfTn2nHKxNhXkAAAAASUVORK5CYII="
+          />
+        </defs>
+      </svg>
+      {/* Other content */}
+    </div>
   );
 };
-
 export default EagleIcon;

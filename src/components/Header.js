@@ -71,7 +71,7 @@ const Header = () => {
     {/* Image and Balance Container */}
     <div className="flex items-center space-x-2 border-2 border-white p-1 rounded-full bg-[#0F0F0F] h-10 px-6">
       <div className="text-white text-xl">123</div>
-      <img src="/sol.jpg" alt="Wallet" className="w-18 h-5"/>
+      <img src="/sol.png" alt="Wallet" className="w-18 h-5"/>
     </div>
   </div>
   <div className="user-id flex items-center space-x-2 border-2 border-white p-1 rounded-full text-white bg-[#0F0F0F] h-10 px-6">

@@ -1,7 +1,12 @@
+// pages/pending-pool.js
+
 import { useState } from 'react';
 import Head from 'next/head';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Filter from '@/components/Filter'; // Import the Filter component
+import SettingsButton from '@/components/SettingsButton'; // Import the SettingsButton component
+import Table from '@/components/Table'; // Import the Table component
 
 const data = [
   {
@@ -32,10 +37,34 @@ const data = [
 export default function PendingPool() {
   const [filterOption, setFilterOption] = useState('All');
 
+  const filterOptions = [
+    { value: 'All', label: 'All' },
+    { value: 'Active', label: 'Active' },
+    { value: 'Inactive', label: 'Inactive' },
+    { value: 'Pending', label: 'Pending' }
+  ];
+
   const handleFilterChange = (event) => {
     setFilterOption(event.target.value);
     // Apply filtering logic here if needed
   };
+
+  // Filter data based on selected filter option
+  const filteredData = data.filter((item) => 
+    filterOption === 'All' || item.status === filterOption
+  );
+
+  const headers = [
+    'Pair',
+    'Created',
+    'Contact Audit',
+    'Pooled Sol',
+    'Pooled Token',
+    '24h Change',
+    'LP Burned',
+    'Status',
+    'Actions'
+  ];
 
   return (
     <div>
@@ -56,56 +85,18 @@ export default function PendingPool() {
         </div>
         {/* Filter and Settings */}
         <div className="flex justify-between items-center mb-4">
-          <select 
-            value={filterOption} 
-            onChange={handleFilterChange}
-            className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="All">All</option>
-            <option value="Active">Active</option>
-            <option value="Inactive">Inactive</option>
-            <option value="Pending">Pending</option>
-          </select>
+          <Filter
+            filterOptions={filterOptions}
+            selectedOption={filterOption}
+            onFilterChange={handleFilterChange}
+          />
           <div>
-            <button className="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700">
-              Settings
-            </button>
+            <SettingsButton />
           </div>
         </div>
 
         {/* Table */}
-        <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gray-800 text-white">
-              <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Pair</th>
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Created</th>
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Contact Audit</th>
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Pooled Sol</th>
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Pooled Token</th>
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">24h Change</th>
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">LP Burned</th>
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Status</th>
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Actions</th>
-              </tr>
-            </thead>
-            <tbody className="bg-white divide-y divide-gray-200">
-              {data.map((item, index) => (
-                <tr key={index}>
-                  <td className="px-6 py-4 whitespace-nowrap">{item.pair}</td>
-                  <td className="px-6 py-4 whitespace-nowrap">{item.created}</td>
-                  <td className="px-6 py-4 whitespace-nowrap">{item.contactAudit}</td>
-                  <td className="px-6 py-4 whitespace-nowrap">{item.pooledSol}</td>
-                  <td className="px-6 py-4 whitespace-nowrap">{item.pooledToken}</td>
-                  <td className="px-6 py-4 whitespace-nowrap">{item.change24h}</td>
-                  <td className="px-6 py-4 whitespace-nowrap">{item.lpBurned}</td>
-                  <td className="px-6 py-4 whitespace-nowrap">{item.status}</td>
-                  <td className="px-6 py-4 whitespace-nowrap">{item.actions}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <Table headers={headers} data={filteredData} />
       </main>
 
     </div>

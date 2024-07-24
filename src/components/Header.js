@@ -1,45 +1,80 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Header = () => {
+  const router = useRouter();
+
   return (
-    <header className="bg-gray-800 text-white p-4">
+    <header className="p-2" style={{ background: '#171717' }}>
       <nav className="flex justify-between items-center">
         {/* Left Section */}
         <div className="flex items-center space-x-4">
-          <div className="text-xl font-bold">My App</div>
+          <img src="/logo.png" alt="Logo" className="w-8 h-8" />
           <ul className="flex space-x-4">
             <li>
               <Link href="/pending-pool">
-                <span className="hover:underline">Pending Pool</span>
+                <span className={`hover:underline ${router.pathname === '/pending-pool' ? 'text-white' : 'text-[#858686]'}`}>
+                  Pending Pool
+                </span>
               </Link>
             </li>
             <li>
               <Link href="/open-positions">
-                <span className="hover:underline">Open Positions</span>
+                <span className={`hover:underline ${router.pathname === '/open-positions' ? 'text-white' : 'text-[#858686]'}`}>
+                  Open Positions
+                </span>
               </Link>
             </li>
             <li>
               <Link href="/closed-positions">
-                <span className="hover:underline">Closed Positions</span>
+                <span className={`hover:underline ${router.pathname === '/closed-positions' ? 'text-white' : 'text-[#858686]'}`}>
+                  Closed Positions
+                </span>
               </Link>
             </li>
             <li>
               <Link href="/settings">
-                <span className="hover:underline">Settings</span>
+                <span className={`hover:underline ${router.pathname === '/settings' ? 'text-white' : 'text-[#858686]'}`}>
+                  Settings
+                </span>
               </Link>
             </li>
           </ul>
         </div>
-        
+
         {/* Right Section */}
         <div className="flex items-center space-x-4">
-          <button className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-700">Purchase Premium</button>
-          <div className="wallet-balance">Wallet Balance</div>
-          <div className="user-id">User ID</div>
-          <div className="profile-icon">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.121 17.804A6.993 6.993 0 0112 15c1.61 0 3.09.525 4.28 1.418m0 0A6.993 6.993 0 0119 17.804M16 14a3 3 0 10-4-4m0 0A3 3 0 1010 14m6 0v4m-6 0v4m2-4h4m-4 0h-4" />
+          <button className="flex items-center justify-between bg-gradient-to-r from-[#00AC82] to-[#271197] backdrop-blur-sm rounded px-4 py-1">
+            <div className="flex flex-col items-start mr-3">
+              <span className="font-bold text-lg text-white">Purchase Premium</span>
+              <span className="text-sm text-white">Pay 0% Fees</span>
+            </div>
+            <svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.9984 14.2065L1.99736 14.2065L0 4.2501L7.00017 8.25019L11.0003 0.25L15.0004 8.25019L22.0005 4.2501L19.9984 14.2065Z" fill="url(#paint0_linear_2751_154)"/>
+              <path d="M1.99971 15.25H20.0001V18.75H1.99736L1.99971 15.25Z" fill="url(#paint1_linear_2751_154)"/>
+              <defs>
+                <linearGradient id="paint0_linear_2751_154" x1="11.3336" y1="0.249613" x2="10.9996" y2="16.25" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#FFC700"/>
+                  <stop offset="0.901" stopColor="#FFD04A"/>
+                </linearGradient>
+                <linearGradient id="paint1_linear_2751_154" x1="11.3336" y1="0.249613" x2="10.9996" y2="16.25" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#FFC700"/>
+                  <stop offset="0.901" stopColor="#FFD04A"/>
+                </linearGradient>
+              </defs>
             </svg>
+          </button>
+          <div className="relative flex items-center space-x-2">
+            {/* Image and Balance Container */}
+            <div className="flex items-center space-x-2 border-2 border-white p-1 rounded-full">
+              <div className="text-white text-xl">123</div>
+              <img src="/sol.jpg" alt="Wallet" />
+
+            </div>
+          </div>
+          <div className="user-id flex items-center space-x-2 border-2 border-white p-1 rounded-full text-white">123456....34567</div>
+          <div className="profile-icon">
+            <img src="/profile-icon.png" alt="Profile Icon" className="w-6 h-6 rounded-full border-white" />
           </div>
         </div>
       </nav>

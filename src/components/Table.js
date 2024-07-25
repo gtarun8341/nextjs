@@ -80,7 +80,7 @@ const Table = ({ headers, data, actions = [] }) => {
       <div className={`flex items-center ${cellColor}`}>
         {header === 'Invested' || header === 'Current' || header === 'PNL' || header === 'Sold' || header === 'Pooled Sol' ? (
           <>
-            <img src="/sol.png" alt="Sol" className="w-6 h-6 mr-2" />
+            <img src="/sol.png" alt="Sol" className="w-5 h-6 mr-2" />
             {value}
           </>
         ) : (

@@ -47,7 +47,7 @@ const Header = () => {
 
         {/* Right Section */}
         <div className="flex items-center space-x-4">
-<button className="flex items-center justify-between bg-gradient-to-r from-[#271197] to-[#00AC82] backdrop-blur-sm rounded px-3 py-1.5">
+<button className="flex items-center justify-between bg-gradient-to-r from-[#271197] to-[#00AC82] backdrop-blur-sm rounded px-3 py-1">
   <div className="flex flex-col items-start mr-12">
     <span className="font-bold text-base text-white">Purchase Premium</span>
     <span className="text-xs text-white">Pay 0% Fees</span>
@@ -70,12 +70,12 @@ const Header = () => {
 
   <div className="relative flex items-center space-x-2">
     {/* Image and Balance Container */}
-    <div className="flex items-center space-x-2 border-2 border-white p-1 rounded-full bg-[#0F0F0F] h-10 px-6">
+    <div className="flex items-center space-x-2 border-2 border-white p-1 rounded-full bg-[#0F0F0F] h-8 px-6">
       <div className="text-white text-xl">123</div>
-      <img src="/sol.png" alt="Wallet" className="w-18 h-5"/>
+      <img src="/sol.png" alt="Wallet" className="w-15 h-5"/>
     </div>
   </div>
-  <div className="user-id flex items-center space-x-2 border-2 border-white p-1 rounded-full text-white bg-[#0F0F0F] h-10 px-6">
+  <div className="user-id flex items-center space-x-2 border-2 border-white p-1 rounded-full text-white bg-[#0F0F0F] h-8 px-6">
   123456....34567
 </div>
   <div className="profile-icon bg-[#0F0F0F] p-1 rounded-full">

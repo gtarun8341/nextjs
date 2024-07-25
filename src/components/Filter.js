@@ -10,8 +10,8 @@ const Filter = ({ filterOptions, selectedOption, onFilterChange }) => {
         <select
           value={selectedOption}
           onChange={onFilterChange}
-          className="border bg-[#0F0F0F] text-white border-gray-300 rounded-lg px-4 py-1 pr-8 focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none"
-          style={{ width: '120px', paddingLeft: '2.5rem' }} // Adjusted width
+          className="border bg-[#0F0F0F] text-white border-gray-300 rounded-xl px-4  pr-8 focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none"
+          style={{ width: '100px', paddingLeft: '2.5rem' }} // Adjusted width
         >
           <option value="" disabled>
             Filter

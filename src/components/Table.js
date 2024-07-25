@@ -28,9 +28,9 @@ const Table = ({ headers, data, actions = [] }) => {
         <div className="flex items-center">
           {value}
           {value === 'burned' ? (
-            <img src="/tick.jpg" alt="Tick" className="w-2 h-2 ml-2" />
+            <img src="/tick.png" alt="Tick" className="w-2 h-2 ml-2" />
           ) : (
-            <img src="/cross.jpg" alt="Cross" className="w-2 h-2 ml-2" />
+            <img src="/cross.png" alt="Cross" className="w-2 h-2 ml-2" />
           )}
         </div>
       );
@@ -54,24 +54,24 @@ const Table = ({ headers, data, actions = [] }) => {
   const renderActions = (item) => {
     const actionComponents = {
       quickBuy: (
-        <button key="quickBuy" className="bg-gray-500 text-white px-4 py-1 rounded-2xl hover:bg-gray-600">
+        <button key="quickBuy" className="bg-[#2B2B2B] text-white px-4 py-1 rounded-2xl hover:bg-[#2B2B2B]">
           Quick Buy
         </button>
       ),
       quickSell: (
-        <button key="quickSell" className="bg-gray-500 text-white px-4 py-1 rounded-2xl hover:bg-gray-600">
+        <button key="quickSell" className="bg-[#2B2B2B] text-white px-4 py-1 rounded-2xl hover:bg-[#2B2B2B]">
           Quick Sell
         </button>
       ),
       cancel: (
-        <button key="cancel" className="bg-gray-500 text-white px-4 py-1 rounded-2xl hover:bg-gray-600">
+        <button key="cancel" className="bg-[#2B2B2B] text-white px-4 py-1 rounded-2xl hover:bg-[#2B2B2B]">
           Cancel
         </button>
       ),
       rotate: (
         <img
           key="rotate"
-          src="./rotate.jpg" // Replace with actual path to your rotate icon image
+          src="./rotate.png" // Replace with actual path to your rotate icon image
           alt="Rotate Icon"
           className="w-5 h-5"
         />

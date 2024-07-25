@@ -11,17 +11,50 @@ const Table = ({ headers, data, actions = [] }) => {
 
   // Helper function to get the color for specific headers
   const getCellColor = (header, item) => {
-    if (header === 'ROI' || header === 'PNL' || header === 'Status' || header === 'change24h') {
-      return isNegative(item.pnl || item.change24h) ? 'text-red-500' : 'text-green-500';
+    const isChange24hNegative = isNegative(item.change24h);
+  
+    if (header === 'ROI' || header === 'PNL') {
+      return isNegative(item.pnl) ? 'text-red-500' : 'text-green-500';
+    } else if (header === 'change24h') {
+      return isChange24hNegative ? 'text-red-500' : 'text-green-500';
+    } else if (header === 'Status') {
+      return isChange24hNegative ? 'text-yellow-500' : 'text-green-500';
     }
-    return ''; // Default color if not ROI, PNL, or Status
+  
+    return ''; // Default color if not ROI, PNL, Status, or change24h
   };
+  
 
   // Helper function to render cell content with conditional styling
   const renderCellContent = (header, item) => {
     const key = header.toLowerCase().replace(/\s+/g, '');
     const value = item[key];
     const cellColor = getCellColor(header, item);
+
+    if (header === 'Contact Audit') {
+      return (
+        <div className="flex items-center space-x-2">
+          {item.fad && (
+            <div className="flex items-center space-x-1">
+              <span>FAD</span>
+              <img src="/tick.png" alt="Tick" className="w-2 h-2" />
+            </div>
+          )}
+          {item.mad && (
+            <div className="flex items-center space-x-1">
+              <span>MAD</span>
+              <img src="/tick.png" alt="Tick" className="w-2 h-2" />
+            </div>
+          )}
+          {item.top10 && (
+            <div className="flex items-center space-x-1">
+              <span>Top 10 Holders</span>
+              <img src="/tick.png" alt="Tick" className="w-2 h-2" />
+            </div>
+          )}
+        </div>
+      );
+    }
 
     if (header === 'LP Burned') {
       return (

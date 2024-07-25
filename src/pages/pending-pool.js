@@ -10,7 +10,9 @@ const data = [
   {
     pair: 'BTC/ETH',
     created: '2024-07-23',
-    contactaudit: 'Passed', // Changed from 'contactAudit' to 'contactaudit'
+    fad: true,
+    mad: true,
+    top10: true,
     pooledsol: '100', // Changed from 'pooledSol' to 'pooledsol'
     pooledtoken: '2000', // Changed from 'pooledToken' to 'pooledtoken'
     change24h: '5%', // Changed from 'change24h' to 'change24h'
@@ -20,8 +22,9 @@ const data = [
   {
     pair: 'ETH/USD',
     created: '2024-07-22',
-    contactaudit: 'Pending', // Changed from 'contactAudit' to 'contactaudit'
-    pooledsol: '150', // Changed from 'pooledSol' to 'pooledsol'
+    fad: true,
+    mad: true,
+    top10: true,    pooledsol: '150', // Changed from 'pooledSol' to 'pooledsol'
     pooledtoken: '3000', // Changed from 'pooledToken' to 'pooledtoken'
     change24h: '-3%', // Changed from 'change24h' to 'change24h'
     lpburned: 'not burned', // Changed from 'lpBurned' to 'lpburned'
@@ -30,8 +33,9 @@ const data = [
   {
     pair: 'BTC/ETH',
     created: '2024-07-23',
-    contactaudit: 'Passed',
-    pooledsol: '100',
+    fad: true,
+    mad: true,
+    top10: true,    pooledsol: '100',
     pooledtoken: '2000',
     change24h: '5%',
     lpburned: 'burned',
@@ -40,8 +44,9 @@ const data = [
   {
     pair: 'ETH/USD',
     created: '2024-07-24',
-    contactaudit: 'Pending',
-    pooledsol: '150',
+    fad: true,
+    mad: true,
+    top10: true,    pooledsol: '150',
     pooledtoken: '2500',
     change24h: '-2%',
     lpburned: 'not burned',
@@ -50,8 +55,9 @@ const data = [
   {
     pair: 'LTC/BTC',
     created: '2024-07-25',
-    contactaudit: 'Failed',
-    pooledsol: '80',
+    fad: true,
+    mad: true,
+    top10: true,    pooledsol: '80',
     pooledtoken: '1800',
     change24h: '8%',
     lpburned: 'burned',
@@ -60,8 +66,9 @@ const data = [
   {
     pair: 'XRP/ETH',
     created: '2024-07-26',
-    contactaudit: 'Passed',
-    pooledsol: '120',
+    fad: true,
+    mad: true,
+    top10: true,    pooledsol: '120',
     pooledtoken: '2200',
     change24h: '-4%',
     lpburned: 'not burned',
@@ -70,8 +77,9 @@ const data = [
   {
     pair: 'ADA/BTC',
     created: '2024-07-27',
-    contactaudit: 'Pending',
-    pooledsol: '90',
+    fad: true,
+    mad: true,
+    top10: true,    pooledsol: '90',
     pooledtoken: '2100',
     change24h: '10%',
     lpburned: 'burned',
@@ -80,8 +88,9 @@ const data = [
   {
     pair: 'BTC/ETH',
     created: '2024-07-23',
-    contactaudit: 'Passed',
-    pooledsol: '100',
+    fad: true,
+    mad: true,
+    top10: true,    pooledsol: '100',
     pooledtoken: '2000',
     change24h: '5%',
     lpburned: 'burned',
@@ -90,8 +99,9 @@ const data = [
   {
     pair: 'ETH/USD',
     created: '2024-07-24',
-    contactaudit: 'Pending',
-    pooledsol: '150',
+    fad: true,
+    mad: true,
+    top10: true,    pooledsol: '150',
     pooledtoken: '2500',
     change24h: '-2%',
     lpburned: 'not burned',
@@ -100,8 +110,9 @@ const data = [
   {
     pair: 'LTC/BTC',
     created: '2024-07-25',
-    contactaudit: 'Failed',
-    pooledsol: '80',
+    fad: true,
+    mad: true,
+    top10: true,    pooledsol: '80',
     pooledtoken: '1800',
     change24h: '8%',
     lpburned: 'burned',
@@ -110,8 +121,9 @@ const data = [
   {
     pair: 'XRP/ETH',
     created: '2024-07-26',
-    contactaudit: 'Passed',
-    pooledsol: '120',
+    fad: true,
+    mad: true,
+    top10: true,    pooledsol: '120',
     pooledtoken: '2200',
     change24h: '-4%',
     lpburned: 'not burned',
@@ -120,8 +132,9 @@ const data = [
   {
     pair: 'ADA/BTC',
     created: '2024-07-27',
-    contactaudit: 'Pending',
-    pooledsol: '90',
+    fad: true,
+    mad: true,
+    top10: true,    pooledsol: '90',
     pooledtoken: '2100',
     change24h: '10%',
     lpburned: 'burned',

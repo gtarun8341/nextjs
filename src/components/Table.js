@@ -11,16 +11,12 @@ const Table = ({ headers, data, actions = [] }) => {
 
   // Helper function to get the color for specific headers
   const getCellColor = (header, item) => {
-    const isChange24hNegative = isNegative(item.change24h);
-  
-    if (header === 'ROI' || header === 'PNL') {
-      return isNegative(item.pnl) ? 'text-red-500' : 'text-green-500';
-    } else if (header === 'change24h') {
-      return isChange24hNegative ? 'text-red-500' : 'text-green-500';
-    } else if (header === 'Status') {
-      return isChange24hNegative ? 'text-yellow-500' : 'text-green-500';
+    if (header === 'Status' && item.status === 'waiting...') {
+      return 'text-yellow-500';
     }
-  
+    if (header === 'ROI' || header === 'PNL' || header === 'Status' || header === 'change24h') {
+      return isNegative(item.pnl || item.change24h) ? 'text-red-500' : 'text-green-500';
+    }
     return ''; // Default color if not ROI, PNL, Status, or change24h
   };
   

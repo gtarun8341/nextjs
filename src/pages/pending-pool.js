@@ -127,7 +127,7 @@ const data = [
     pooledtoken: '2200',
     change24h: '-4%',
     lpburned: 'not burned',
-    status: 'buying',
+    status: 'waiting...',
   },
   {
     pair: 'ADA/BTC',
@@ -138,7 +138,7 @@ const data = [
     pooledtoken: '2100',
     change24h: '10%',
     lpburned: 'burned',
-    status: 'waiting...',
+    status: 'sold',
   },
   // Add more rows as needed
 ];

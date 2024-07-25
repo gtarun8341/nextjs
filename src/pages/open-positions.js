@@ -16,7 +16,7 @@ const initialData = [
     current: '2000',
     roi: '5%',
     pnl: '50',
-    status: 'Open',
+    status: 'waiting...',
   },
   {
     pair: 'ETH/USD',
@@ -25,7 +25,7 @@ const initialData = [
     current: '3000',
     roi: '-3%',
     pnl: '-75',
-    status: 'Open',
+    status: 'SL Selling',
   },
   {
     pair: 'BTC/ETH',
@@ -34,7 +34,7 @@ const initialData = [
     current: '1800',
     roi: '-10%',
     pnl: '-20',
-    status: 'Closed',
+    status: 'SL selling',
   },
   {
     pair: 'ETH/USD',
@@ -43,7 +43,7 @@ const initialData = [
     current: '3000',
     roi: '-3%',
     pnl: '-75',
-    status: 'Open',
+    status: 'SL selling',
   },
   {
     pair: 'LTC/BTC',
@@ -52,7 +52,7 @@ const initialData = [
     current: '6000',
     roi: '50%',
     pnl: '2000',
-    status: 'Closed',
+    status: 'waiting...',
   },
   {
     pair: 'XRP/ETH',
@@ -61,7 +61,7 @@ const initialData = [
     current: '500',
     roi: '-20%',
     pnl: '-50',
-    status: 'Open',
+    status: 'SL selling',
   },
   {
     pair: 'ADA/BTC',
@@ -70,7 +70,7 @@ const initialData = [
     current: '4200',
     roi: '40%',
     pnl: '1200',
-    status: 'Closed',
+    status: 'TP selling',
   },
   {
     pair: 'BTC/ETH',
@@ -79,7 +79,7 @@ const initialData = [
     current: '1800',
     roi: '-10%',
     pnl: '-20',
-    status: 'Closed',
+    status: 'SL Selling',
   },
   {
     pair: 'ETH/USD',
@@ -88,7 +88,7 @@ const initialData = [
     current: '3000',
     roi: '-3%',
     pnl: '-75',
-    status: 'Open',
+    status: 'SL selling',
   },
   {
     pair: 'LTC/BTC',
@@ -97,7 +97,7 @@ const initialData = [
     current: '6000',
     roi: '50%',
     pnl: '2000',
-    status: 'Closed',
+    status: 'TP selling',
   },
   {
     pair: 'XRP/ETH',
@@ -106,7 +106,7 @@ const initialData = [
     current: '500',
     roi: '-20%',
     pnl: '-50',
-    status: 'Open',
+    status: 'SL Selling ',
   },
   {
     pair: 'ADA/BTC',
@@ -115,7 +115,7 @@ const initialData = [
     current: '4200',
     roi: '40%',
     pnl: '1200',
-    status: 'Closed',
+    status: 'TP selling',
   },
   // Add more rows as needed
 ];

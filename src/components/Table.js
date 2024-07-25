@@ -27,6 +27,17 @@ const Table = ({ headers, data, actions = [] }) => {
     const value = item[key];
     const cellColor = getCellColor(header, item);
 
+    const images = ['/p1.jpg', '/p2.jpg', '/p3.jpg'];
+    const randomImage = images[Math.floor(Math.random() * images.length)];
+
+    if (header === 'Pair') {
+      return (
+        <div className={`flex items-center ${cellColor}`}>
+          <img src={randomImage} alt="Random" className="w-4 h-4 mr-2 rounded-full" />
+          {value}
+        </div>
+      );
+    }
     if (header === 'Contact Audit') {
       return (
         <div className="flex items-center space-x-2">

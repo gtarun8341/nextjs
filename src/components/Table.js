@@ -104,10 +104,9 @@ const Table = ({ headers, data, actions = [] }) => {
   return (
     <div className="relative overflow-x-auto">
       <div
-        className="absolute inset-0 top-0 left-0 w-32 h-full bg-[#681abc] opacity-50"
+        className="absolute top-0 left-0 w-32 h-32 bg-[rgba(149,14,144,0.5)]"
         style={{
           filter: 'blur(166.9px)',
-          boxShadow: '2px 2px 20px rgba(104, 22, 186, 0.5)',
           zIndex: -1,
         }}
       />

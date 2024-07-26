@@ -5,7 +5,7 @@ const Header = () => {
   const router = useRouter();
 
   return (
-    <header className="p-2" style={{ background: '#171717' }}>
+    <header className="p-1" style={{ background: '#171717' }}>
       <nav className="flex justify-between items-center">
         {/* Left Section */}
         <div className="flex items-center space-x-4">

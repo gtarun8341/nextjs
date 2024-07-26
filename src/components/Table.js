@@ -157,16 +157,17 @@ const Table = ({ headers, data, actions = [] }) => {
           scrollbarWidth: '12px' /* For Firefox */,
         }}
       >        <table className="min-w-full divide-y divide-gray-100">
-          <thead className="bg-[#0F0F0F] text-white">
-            <tr>
-              {headers.map((header, index) => (
-                <th key={index} className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
-                  {header}
-                </th>
-              ))}
-              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"></th>
-            </tr>
-          </thead>
+<thead className="bg-[#0F0F0F] text-white" style={{ borderTop: '1px solid #515151', borderBottom: '1px solid #515151' }}>
+  <tr>
+    {headers.map((header, index) => (
+      <th key={index} className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
+        {header}
+      </th>
+    ))}
+    <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"></th>
+  </tr>
+</thead>
+
           <tbody>
             {data.map((item, rowIndex) => (
               <tr key={rowIndex} className={rowIndex % 2 === 0 ? 'bg-[#141414]' : 'bg-[#0F0F0F]'}>

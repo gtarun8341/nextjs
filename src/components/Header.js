@@ -9,7 +9,7 @@ const Header = () => {
       <nav className="flex justify-between items-center">
         {/* Left Section */}
         <div className="flex items-center space-x-4">
-        <div className="bg-[#0F0F0F] p-1 rounded-full mr-4">
+        <div className=" p-1 rounded-full mr-4">
   <img src="/file.png" alt="Logo" className="w-19 h-12" />
 </div>
 
@@ -70,14 +70,15 @@ const Header = () => {
 
   <div className="relative flex items-center space-x-2">
     {/* Image and Balance Container */}
-    <div className="flex items-center space-x-2 border-2 border-white p-1 rounded-full bg-[#0F0F0F] h-8 px-6">
+    <div className="flex items-center space-x-2 border border-white p-1 rounded-full bg-[#0F0F0F] h-8 px-6">
       <div className="text-white text-xl">123</div>
       <img src="/sol.png" alt="Wallet" className="w-15 h-5"/>
     </div>
   </div>
-  <div className="user-id flex items-center space-x-2 border-2 border-white p-1 rounded-full text-white bg-[#0F0F0F] h-8 px-6">
+  <div className="user-id flex items-center space-x-2 border border-white p-1 rounded-full text-white bg-[#0F0F0F] h-8 px-6">
   123456....34567
 </div>
+
   <div className="profile-icon bg-[#0F0F0F] p-1 rounded-full">
     <img src="/profile.jpg" alt="Profile Icon" className="w-8 h-8 rounded-full border-white" />
   </div>

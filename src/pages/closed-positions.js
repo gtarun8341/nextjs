@@ -141,7 +141,7 @@ export default function ClosedPositions() {
       <Header />
 
       <main className="p-4">
-        <div className="mb-4">
+        <div className="mb-4 mt-10">
           <h2 className="text-2xl font-semibold">Closed Positions</h2>
         </div>
         <div className="mb-4">

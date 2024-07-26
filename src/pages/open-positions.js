@@ -159,7 +159,7 @@ export default function OpenPositions() {
       <Header />
 
       <main className="p-4">
-        <div className="mb-4 flex items-center justify-between">
+        <div className="mb-4 flex items-center justify-between mt-10">
           <h2 className="text-2xl font-semibold">Open Positions</h2>
         </div>
         <div className="mb-4">

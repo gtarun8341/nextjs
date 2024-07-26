@@ -10,7 +10,7 @@ const Header = () => {
         {/* Left Section */}
         <div className="flex items-center space-x-4">
         <div className="bg-[#0F0F0F] p-1 rounded-full mr-4">
-  <img src="/logo.jpg" alt="Logo" className="w-19 h-12" />
+  <img src="/file.png" alt="Logo" className="w-19 h-12" />
 </div>
 
           <ul className="flex space-x-4">

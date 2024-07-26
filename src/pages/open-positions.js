@@ -7,7 +7,8 @@ import Footer from '@/components/Footer';
 import Filter from '@/components/Filter'; // Import new Filter component
 import SettingsButton from '@/components/SettingsButton'; // Import new SettingsButton component
 import Table from '@/components/Table'; // Import the Table component
-
+import { ToastContainer } from 'react-toastify'; // Import ToastContainer
+import 'react-toastify/dist/ReactToastify.css'; // Import Toastify CSS
 const initialData = [
   {
     pair: 'BTC/ETH',
@@ -212,6 +213,7 @@ export default function OpenPositions() {
         {/* Table */}
         <Table headers={headers} data={data} actions={['rotate', 'eagle', 'quickSell', 'eye']} />
       </main>
+      <ToastContainer /> {/* Add ToastContainer here */}
 
     </div>
   );

@@ -1,5 +1,8 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 import EagleIcon from './EagleIcon';
+import CustomToast from './CustomToast'; // Adjust the path as needed
+
 const Table = ({ headers, data, actions = [] }) => {
   // Helper function to check if a value is negative
   const isNegative = (value) => {
@@ -19,7 +22,6 @@ const Table = ({ headers, data, actions = [] }) => {
     }
     return ''; // Default color if not ROI, PNL, Status, or change24h
   };
-  
 
   // Helper function to render cell content with conditional styling
   const renderCellContent = (header, item) => {
@@ -94,17 +96,36 @@ const Table = ({ headers, data, actions = [] }) => {
   const renderActions = (item) => {
     const actionComponents = {
       quickBuy: (
-        <button key="quickBuy" className="bg-[#2B2B2B] text-white px-4 py-1 rounded-2xl hover:bg-[#2B2B2B]">
+        <button
+          key="quickBuy"
+          className="bg-[#2B2B2B] text-white px-4 py-1 rounded-2xl hover:bg-[#2B2B2B]"
+          onClick={() => toast.success('Quick Buy action triggered')}
+        >
           Quick Buy
         </button>
       ),
       quickSell: (
-        <button key="quickSell" className="bg-[#2B2B2B] text-white px-4 py-1 rounded-2xl hover:bg-[#2B2B2B]">
+        <button
+          key="quickSell"
+          className="bg-[#2B2B2B] text-white px-4 py-1 rounded-2xl hover:bg-[#2B2B2B]"
+          onClick={() => toast(<CustomToast />, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: true,
+            closeButton: false,
+            className: 'custom-toast-container',
+            bodyClassName: 'custom-toast-body',
+            toastClassName: 'custom-toast',
+              })}    >
           Quick Sell
         </button>
       ),
       cancel: (
-        <button key="cancel" className="bg-[#2B2B2B] text-white px-4 py-1 rounded-2xl hover:bg-[#2B2B2B]">
+        <button
+          key="cancel"
+          className="bg-[#2B2B2B] text-white px-4 py-1 rounded-2xl hover:bg-[#2B2B2B]"
+          onClick={() => toast.warning('Cancel action triggered')}
+        >
           Cancel
         </button>
       ),
@@ -150,24 +171,24 @@ const Table = ({ headers, data, actions = [] }) => {
           zIndex: -1,
         }}
       />
-<div
+      <div
         className="overflow-y-auto scrollbar-thin scrollbar-thumb-[#0F0F0F] scrollbar-track-[#141414]"
         style={{ 
           maxHeight: '450px', 
           scrollbarWidth: '12px' /* For Firefox */,
         }}
-      >        <table className="min-w-full divide-y divide-gray-100">
-<thead className="bg-[#0F0F0F] text-white" style={{ borderTop: '1px solid #515151', borderBottom: '1px solid #515151' }}>
-  <tr>
-    {headers.map((header, index) => (
-      <th key={index} className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
-        {header}
-      </th>
-    ))}
-    <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"></th>
-  </tr>
-</thead>
-
+      >
+        <table className="min-w-full divide-y divide-gray-100">
+          <thead className="bg-[#0F0F0F] text-white" style={{ borderTop: '1px solid #515151', borderBottom: '1px solid #515151' }}>
+            <tr>
+              {headers.map((header, index) => (
+                <th key={index} className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
+                  {header}
+                </th>
+              ))}
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"></th>
+            </tr>
+          </thead>
           <tbody>
             {data.map((item, rowIndex) => (
               <tr key={rowIndex} className={rowIndex % 2 === 0 ? 'bg-[#141414]' : 'bg-[#0F0F0F]'}>

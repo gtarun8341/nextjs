@@ -2,12 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 /* styles/global.css */
+/* Ensure background color is applied to the entire toast */
 html, body {
-    background-color: #0F0F0F;
-    margin: 0;
-    padding: 0;
-    color: #fff; /* Set default text color if needed */
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  }
-  
-  
+  background-color: #0F0F0F;
+  margin: 0;
+  padding: 0;
+  color: #fff; /* Set default text color if needed */
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+}
+
+.custom-toast-container {
+  /* Override default container styles if needed */
+}
+
+.custom-toast {
+  background-color: #282828 !important; /* Ensure background color is applied */
+  border-radius: 8px;
+  /* Optional: Add padding and other styling */
+}
+
+.custom-toast-body {
+  color: white; /* Ensure text color is applied */
+}

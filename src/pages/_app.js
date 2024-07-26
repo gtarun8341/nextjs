@@ -13,7 +13,6 @@ function MyApp({ Component, pageProps }) {
         autoClose={5000}
         hideProgressBar
         closeButton={false} // Prevent default close button
-        className="custom-toast-container" // Custom class name for styling
         toastClassName="custom-toast" // Custom class name for toast styling
         bodyClassName="custom-toast-body" // Custom class name for body styling
       />

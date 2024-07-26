@@ -3,6 +3,7 @@
 @tailwind utilities;
 /* styles/global.css */
 /* Ensure background color is applied to the entire toast */
+/* Ensure background color is applied to the entire toast */
 html, body {
   background-color: #0F0F0F;
   margin: 0;
@@ -12,15 +13,20 @@ html, body {
   font-style: normal;
 }
 
+/* Ensure toast container styles */
 .custom-toast-container {
-  /* Override default container styles if needed */
-}
-
-.custom-toast {
   background-color: #282828 !important; /* Ensure background color is applied */
   border-radius: 8px;
-  /* Optional: Add padding and other styling */
-}
+  padding: 16px;
+  max-width: 1000;
+width: 100%; /* Let the width be determined by content */
+  height: auto; /* Adjust height automatically based on content */
+  display: flex; /* Ensure the toast is flexible with content */
+  align-items: center; /* Center content vertically */
+  position: relative;}
+
+/* Adjust the width of the custom toast message */
+
 
 .custom-toast-body {
   color: white; /* Ensure text color is applied */
